@@ -1,0 +1,24 @@
+
+<div  class=" row row-cols-1 row-cols-md-3 g-4">
+{{#each blogData as |blog|}}
+<div class="col card-spacer-y * .5;" >
+    <div class="card h-100">
+        <div class="card-body ">
+          <small class="text-muted">{{blog.date_created}}
+            <h5 class="card-title">{{blog.user.username}}</h5></small>
+            <p class="card-text">{{blog.content}}</p>
+
+         </div>   
+        
+        <div class="card-footer">
+          <p5 id="comText">{{blog.id}}</p5>
+          <button id="comment">click</button>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+ 
+
+

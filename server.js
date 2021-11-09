@@ -1,5 +1,5 @@
 const path = require('path');
-
+const fs=require('fs')
 const express = require('express');
 
 const exphbs = require('express-handlebars');
@@ -10,14 +10,14 @@ const sequelize = require('./config/connection');
 
 const session = require('express-session');
 
-const withAuth = require('./utils/withAuth');
+//const withAuth = require('./utils/withAuth');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express()
-const axios = require('axios')
-const hbs = exphbs.create({ });
+const axios = require('axios');
+const hbs = exphbs.create({});
 
 
 const sess = {
@@ -32,7 +32,7 @@ const sess = {
 
 app.use(session(sess));
 
-// app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 
